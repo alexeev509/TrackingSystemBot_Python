@@ -9,7 +9,7 @@ bot = telebot.TeleBot(TOKEN)
 
 chrome_options = webdriver.ChromeOptions()
 chrome_options.binary_location = os.environ.get('GOOGLE_CHROME_SHIM', None)
-browser = webdriver.Chrome(executable_path="chromedriver", chrome_options=chrome_options)
+browser = webdriver.Chrome(executable_path="/app/.chromedriver/bin/chromedriver", chrome_options=chrome_options)
 
 @bot.message_handler(commands=['start', 'go'])
 def start_handler(message):
