@@ -1,5 +1,6 @@
 import telebot
 import os
+import time
 from selenium import webdriver
 from selenium.webdriver.common.by import By
 
@@ -18,9 +19,10 @@ driver = webdriver.Chrome(executable_path=os.environ.get("CHROMEDRIVER_PATH"), o
 def start_handler(message):
     url = 'https://www.citilink.ru/product/smartfon-apple-iphone-13-pro-a2483-128gb-zelenyi-3g-4g-6-1-ios-15-802-1809134/'
     driver.get(url)
+    print(driver.page_source)
     elem = driver.find_elements(By.XPATH, '//div[@class="ProductPrice ProductPrice_default ProductPrice_size_xs "]')
-    #result_price = elem[0].find_elements(By.TAG_NAME, "span")[1].get_attribute("innerText").strip()
-    result_price = 1
+    result_price = elem[0].find_elements(By.TAG_NAME, "span")[1].get_attribute("innerText").strip()
+    #result_price = 1
     bot.send_message(message.chat.id, 'Привет, когда я вырасту, я буду парсить заголовки с Хабра: '+str(result_price))
 bot.polling()
 
