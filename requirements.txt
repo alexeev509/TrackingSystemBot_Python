@@ -1,2 +1,2 @@
-pip3 install telebot
-pip3 freeze > requirements.txt
+pip install telebot
+pip freeze > requirements.txt
