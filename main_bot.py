@@ -19,7 +19,8 @@ def start_handler(message):
     url = 'https://www.citilink.ru/product/smartfon-apple-iphone-13-pro-a2483-128gb-zelenyi-3g-4g-6-1-ios-15-802-1809134/'
     driver.get(url)
     elem = driver.find_elements(By.XPATH, '//div[@class="ProductPrice ProductPrice_default ProductPrice_size_xs "]')
-    result_price = elem[0].find_elements(By.TAG_NAME, "span")[1].get_attribute("innerText").strip()
+    #result_price = elem[0].find_elements(By.TAG_NAME, "span")[1].get_attribute("innerText").strip()
+    result_price = 1
     bot.send_message(message.chat.id, 'Привет, когда я вырасту, я буду парсить заголовки с Хабра: '+str(result_price))
 bot.polling()
 
