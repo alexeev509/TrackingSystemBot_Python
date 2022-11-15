@@ -1,2 +1,1 @@
-pip install telebot
-pip freeze > requirements.txt
+pyTelegramBotApi=4.7.1
