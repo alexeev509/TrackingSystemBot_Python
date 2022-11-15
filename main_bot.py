@@ -1,5 +1,4 @@
 import telebot
-import parser
 import os
 
 
